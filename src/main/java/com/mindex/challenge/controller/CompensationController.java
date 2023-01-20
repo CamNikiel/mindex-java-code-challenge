@@ -19,10 +19,10 @@ public class CompensationController {
     private CompensationService compensationService;
 
     @PostMapping("/compensation")
-    public Compensation create(@RequestBody Employee employee) {
-        LOG.debug("Received employee create request for [{}]", employee);
+    public Compensation create(@RequestBody String employeeId) {
+        LOG.debug("Received employee create request for [{}]", employeeId);
 
-        return compensationService.create(employee.getEmployeeId());
+        return compensationService.create(employeeId);
     }
 
     @GetMapping("/compensation/{id}")
