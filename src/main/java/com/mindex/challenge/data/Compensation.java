@@ -1,6 +1,6 @@
 package com.mindex.challenge.data;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Compensation {
 
@@ -8,11 +8,11 @@ public class Compensation {
     private Double salary;
     private Date effactiveDate;
 
-    public Compensation(String employeeId){
+    public Compensation(){
 
     }
 
-    public void setEmployee(String employeeId){
+    public void setEmployeeId(String employeeId){
         this.employeeId = employeeId;
     }
 
@@ -24,7 +24,7 @@ public class Compensation {
         this.effactiveDate = effactiveDate;
     }
 
-    public String getEmployee(){
+    public String getEmployeeId(){
         return this.employeeId;
     }
 
