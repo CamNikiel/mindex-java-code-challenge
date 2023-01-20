@@ -21,7 +21,7 @@ public class CompensationServiceImpl implements CompensationService{
     public Compensation create(String employeeId) {
         LOG.debug("Creating compensation for [{}]", employeeId);
 
-        Compensation compensation = new Compensation();
+        Compensation compensation = new Compensation(employeeId);
         compensationRepository.insert(compensation);
 
         return compensation;
