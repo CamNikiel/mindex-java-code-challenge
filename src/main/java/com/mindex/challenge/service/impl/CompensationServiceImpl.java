@@ -5,15 +5,13 @@ import org.slf4j.LoggerFactory;
 
 import com.mindex.challenge.dao.CompensationRepository;
 import com.mindex.challenge.data.Compensation;
-import com.mindex.challenge.data.Employee;
 import com.mindex.challenge.service.CompensationService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.UUID;
 
-
-public class CompensationImple implements CompensationService{
+@Service
+public class CompensationServiceImpl implements CompensationService{
     private static final Logger LOG = LoggerFactory.getLogger(EmployeeServiceImpl.class);
 
     @Autowired
@@ -23,7 +21,7 @@ public class CompensationImple implements CompensationService{
     public Compensation create(String employeeId) {
         LOG.debug("Creating compensation for [{}]", employeeId);
 
-        Compensation compensation = new Compensation(employeeId);
+        Compensation compensation = new Compensation();
         compensationRepository.insert(compensation);
 
         return compensation;
