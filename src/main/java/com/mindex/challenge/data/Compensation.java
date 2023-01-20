@@ -8,8 +8,8 @@ public class Compensation {
     private Double salary;
     private Date effactiveDate;
 
-    public Compensation(){
-
+    public Compensation(String employeeId){
+        this.employeeId = employeeId;
     }
 
     public void setEmployeeId(String employeeId){
