@@ -1,6 +1,5 @@
 package com.mindex.challenge.controller;
 
-import com.mindex.challenge.data.Employee;
 import com.mindex.challenge.data.ReportingStructure;
 import com.mindex.challenge.service.ReportingStructureService;
 
@@ -16,10 +15,9 @@ public class ReportingStructureController {
     @Autowired
     private ReportingStructureService reportingStructureService;
 
-    @PostMapping("/reportingStructure")
-    public ReportingStructure create(@RequestBody Employee employee) {
-        LOG.debug("Received ReportingStructure create request for [{}]", employee);
-
-        return reportingStructureService.create(employee);
+    @PostMapping("/reportingStructure/{id}")
+    public ReportingStructure read(@RequestBody String employeeId) {
+        LOG.debug("Received ReportingStructure create request for [{}]", employeeId);
+        return reportingStructureService.read(employeeId);
     }
 }
